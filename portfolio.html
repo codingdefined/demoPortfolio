@@ -1,0 +1,130 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<link href="portfolio.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<body class='full'>
+	<nav id='mynav' class='full color0'>
+		<div class='content'>	
+			<ul class='left'>
+				<li class='logo'>Coding Defined</li>
+				
+			</ul>
+			<ul id='menu-ikona' style=''>
+				<li><i class="material-icons md-48">menu</i></i>
+			</ul>
+			
+			<ul class='right links'>
+				<li class='active' ><a href='#about'>About Me</a></li>
+				<li><a href='#skills'>Skills</a></li>
+				<li><a href='#portfolio'>Portfolio</a></li>
+				<li><a href='#contact'>Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<header class='full color1' id='about'>
+		<div class='content overflow'>
+			<div class='image left'>
+				<img src='https://avatars1.githubusercontent.com/u/13746289?v=4&s=460' class=' slika'>
+			</div>
+			<div class='info right'>
+				<h1>Welcome To CodingDefined's <br>Portfolio!</h1>
+				<br>
+				<p>I am a Proud Indian working as a developer in the tech hub of India (Bangalore). I help people to get up and running with the latest technology. I am also a blogger who loves to write about technology and programming. When I am not programming then you can see me roaming around the streets of Bangalore with my Nokia 6 mobile camera to get a cool snap. I believe in helping people in whatever way I can. </p>
+			</div>
+		</div>
+	</header>
+	
+	<section class='full color2' id='skills'>
+		<div class='content'>
+			<h2>I posses below Skills</h2>
+			<ul class='skills'>
+				<li class='krug'><p>HTML</p></li>
+				<li class='krug'><p>CSS</p></li>
+				<li class='krug'><p>Javascript</p></li>
+				<li class='krug'><p>ASP.Net</p></li>
+				<li class='krug'><p>Node.js</p></li>
+			</ul>
+		</div>
+	</section>
+	
+	<section class='full color3' id='portfolio'>
+		<div class='content'>
+			<h2>Projects Done Till Now</h2>
+			<div class='projects'>
+				<a href='http://www.codingdefined.com'>
+					<div class='card'>
+					
+					</div>
+				</a>
+				
+				<a href='http://www.codingdefined.com'>
+					<div class='card'>
+					
+					</div>
+				</a>
+				
+				<a href='http://www.codingdefined.com'>
+				<div class='card'>
+				
+				</div>
+				</a>
+				
+			</div>
+		</div>
+	</section>
+
+	<section class='full color4' id='contact'>
+		<div class='content'>
+			<h2>Here are few social networks of mine:</h2>
+			<br>
+			<a href="https://www.facebook.com/codingdefined" target="_blank">Facebook</a> |
+	  		<a href="https://plus.google.com/+Codingdefined" target="_blank">Google Plus</a> |
+	  		<a href="https://www.youtube.com/channel/UCBxB1eH0IjJa4NiL1H-qApg" target="_blank"> Youtube</a> |
+	  		<a href="https://steemit.com/@codingdefined" target="_blank">Steemit</a>
+	</section>
+
+
+	<script>
+		$(document).ready(function(){
+			//SLIDE NAVIGACIJA
+			$('#menu-ikona').click(function(){
+				$('.links').slideToggle(300);
+			});
+			
+			//ON RESIZE Sakrij navigaciju posle klika na link
+			$( window ).resize(function() {
+				if($(window).width() <960){
+					$('.links li a').click(function(){
+						$('.links').slideUp(500);
+					});	
+				}
+			});
+				
+			//Ako vratim prozor na veliki ekran, vrati linkove u navigaciju		
+			$( window ).resize(function() {
+				if($(window).width() >= 960){
+					$('.links').css('display','block');
+				}
+			});	
+			
+			//ZATVARANJE NAVIGACIJE POSLE KLIKA NA LINK	
+			
+			
+			//SMOOTH SCROLL
+			$('a[href*="#"]:not([href="#"])').click(function() {
+			  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+				if (target.length) {
+				  $('html, body').animate({
+					scrollTop: target.offset().top
+				  }, 1000);
+				  return false;
+				}
+			  }
+			});
+		});
+	</script>
+</body>
